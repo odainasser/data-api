@@ -29,11 +29,11 @@ Before you begin, ensure you have the following installed on your system:
 3. Start the application:
 
 
-   npm run start:dev
+- npm run start:dev
 
    or 
 
-   docker-compose up --build
+- docker-compose up --build
 
 4. to use "/image-frame/upload" endpoint you can upload the file random_image_data.csv wich located in index folder provided as an example, the file built by the script in "script.py" file, you can run it on google colab to get the file by the script.
 
