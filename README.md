@@ -20,11 +20,11 @@ Before you begin, ensure you have the following installed on your system:
 
 2. Create a .env file in the root directory and add your environment variables:
   
-  DATABASE_HOST=localhost
-  DATABASE_PORT=5432
-  DATABASE_USER=your_db_user
-  DATABASE_PASSWORD=your_db_password
-  DATABASE_NAME=your_db_name  
+- DATABASE_HOST=localhost
+- DATABASE_PORT=5432
+- DATABASE_USER=your_db_user
+- DATABASE_PASSWORD=your_db_password
+- DATABASE_NAME=your_db_name  
 
 3. Start the application:
 
@@ -35,29 +35,6 @@ Before you begin, ensure you have the following installed on your system:
 
    docker-compose up --build
 
-4. to use "/image-frame/upload" endpoint you can upload the file random_image_data.csv wich located in index folder provided as an example, the file built by this script you can run it on google colab to get the file by the script.
+4. to use "/image-frame/upload" endpoint you can upload the file random_image_data.csv wich located in index folder provided as an example, the file built by the script in "script.py" file, you can run it on google colab to get the file by the script.
 
-===================================================================================
 
-import pandas as pd
-import numpy as np
-from google.colab import files
-
-num_rows = 100  # Number of rows of data
-num_columns = 200  # Number of pixel columns
-depth_start = 1
-depth_end = 1000
-
-depths = np.linspace(depth_start, depth_end, num_rows)
-
-pixel_data = np.random.randint(0, 256, size=(num_rows, num_columns))
-
-df = pd.DataFrame(pixel_data, columns=[f'pixel_{i+1}' for i in range(num_columns)])
-df.insert(0, 'depth', depths)
-
-csv_file_path = 'random_image_data.csv'
-df.to_csv(csv_file_path, index=False)
-
-print(f"CSV file generated: {csv_file_path}")
-
-files.download(csv_file_path)
